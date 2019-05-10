@@ -8,13 +8,14 @@ import { PdfLoaderService } from '../services/pdf-loader.service';
   providers: [PdfLoaderService]
 })
 export class PdfDisplayComponent implements OnInit {
-  @Input() pdfSrc: string;
+  pdfSrc: string;
+  @Input() type: string;
   constructor(private pdfLoaderService: PdfLoaderService) { }
 
   ngOnInit() {
     // this.pdfSrc = this.pdfLoaderService.getPDF();
   }
-  onFileSelected() {
+  /*onFileSelected() {
     const $img: any = document.querySelector('#file');
 
     if (typeof (FileReader) !== 'undefined') {
@@ -26,5 +27,5 @@ export class PdfDisplayComponent implements OnInit {
 
       reader.readAsArrayBuffer($img.files[0]);
     }
-  }
+  }*/
 }

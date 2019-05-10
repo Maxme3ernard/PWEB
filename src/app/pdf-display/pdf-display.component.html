@@ -1,8 +1,8 @@
 <div>
-  <label>PDF src</label>
-  <input (change)="onFileSelected()" type="file" id =file [(ngModel)]="pdfSrc">
+  <label>{{type}}</label>
+  <input  type="text"  class="form-control" [(ngModel)]="pdfSrc">
 </div>
-<pdf-viewer [src]="pdfSrc"
+<pdf-viewer [src]="pdfSrc+type+'.pdf'"
             [render-text]="true"
             style="display: block;"
 ></pdf-viewer>
