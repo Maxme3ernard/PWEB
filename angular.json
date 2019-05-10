@@ -23,6 +23,8 @@
               "src/assets"
             ],
             "styles": [
+              "./src/bootstrap/css/bootstrap.css",
+              "./src/bootstrap/css/squelette.css",
               "src/styles.css"
             ],
             "scripts": [],
