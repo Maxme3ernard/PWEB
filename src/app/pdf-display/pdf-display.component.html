@@ -1,6 +1,6 @@
 <div>
   <label>{{type}}</label>
-  <input  type="text"  class="form-control" [(ngModel)]="pdfSrc">
+  <app-select-matiere></app-select-matiere>
 </div>
 <pdf-viewer [src]="pdfSrc+type+'.pdf'"
             [render-text]="true"

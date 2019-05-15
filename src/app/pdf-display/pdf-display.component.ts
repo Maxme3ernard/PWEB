@@ -1,5 +1,7 @@
 import {Component, Input, OnInit} from '@angular/core';
 import { PdfLoaderService } from '../services/pdf-loader.service';
+import {Subscription} from 'rxjs';
+
 
 @Component({
   selector: 'app-pdf-display',
@@ -10,9 +12,12 @@ import { PdfLoaderService } from '../services/pdf-loader.service';
 export class PdfDisplayComponent implements OnInit {
   pdfSrc: string;
   @Input() type: string;
+  pdfSubscription: Subscription;
   constructor(private pdfLoaderService: PdfLoaderService) { }
 
   ngOnInit() {
+    this.pdfSubscription = this.pdfLoaderService.pdfSubject.subscribe((lien: string) => {this.pdfSrc = lien; });
+    this.pdfLoaderService.emitPdf();
     // this.pdfSrc = this.pdfLoaderService.getPDF();
   }
   /*onFileSelected() {
