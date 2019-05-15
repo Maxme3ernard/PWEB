@@ -25,6 +25,7 @@
             "styles": [
               "./src/bootstrap/css/bootstrap.css",
               "./src/bootstrap/css/squelette.css",
+              "./src/bootstrap/css/pagePrincipale.css",
               "src/styles.css"
             ],
             "scripts": [],
