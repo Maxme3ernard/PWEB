@@ -2,10 +2,10 @@ body {
   padding-top: 10px;
 }
 [class*="col-"], footer {
-  background-color: lightblue;
-  border: 2px solid black;
-  border-radius: 6px;
-  line-height: 40px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 0;
+  line-height: 20px;
   text-align: center;
 }
 
@@ -22,9 +22,9 @@ body {
 }
 
 .form-control{
-  background: #2c3e50;;
+  background: #2c3e50;
   color: WHITE;
-  border: 0px;
+  border: 0;
 }
 
 @media (min-width: 768px) {
@@ -81,5 +81,3 @@ select::-ms-expand {
 .styled-select:hover::after {
   color: #f39c12;
 }
-
-
