@@ -18,6 +18,7 @@ export class PdfDisplayComponent implements OnInit {
   ngOnInit() {
     this.pdfSubscription = this.pdfLoaderService.pdfSubject.subscribe((lien: string) => {this.pdfSrc = lien; });
     this.pdfLoaderService.emitPdf();
+    this.pdfSrc = '/assets/undefined';
     // this.pdfSrc = this.pdfLoaderService.getPDF();
   }
   /*onFileSelected() {

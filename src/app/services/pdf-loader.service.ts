@@ -10,12 +10,13 @@ export class PdfLoaderService {
 
   constructor() { }
   getPDF(anneeTC: string, matiere: string, annee: string): string {
-    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS/' + annee + '/';
+    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS' + annee;
     this.emitPdf();
     return this.url;
   }
   setPDF(anneeTC: string, matiere: string, annee: string) {
-    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS/' + annee + '/';
+    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS' + annee;
+    console.log('Loading: ' + this.url);
     this.emitPdf();
   }
   emitPdf() {
