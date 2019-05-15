@@ -1,12 +1,25 @@
 import { Injectable } from '@angular/core';
+import {Subject} from 'rxjs';
 
 @Injectable({
   providedIn: 'root'
 })
 export class PdfLoaderService {
+  pdfSubject = new Subject();
+  private url: string;
 
   constructor() { }
-  getPDF():string {
-    return '/assets/3TC/TSA/DS/2002-2003/Sujet 2003.pdf';
+  getPDF(anneeTC: string, matiere: string, annee: string): string {
+    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS' + annee;
+    this.emitPdf();
+    return this.url;
+  }
+  setPDF(anneeTC: string, matiere: string, annee: string) {
+    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS' + annee;
+    console.log('Loading: ' + this.url);
+    this.emitPdf();
+  }
+  emitPdf() {
+    this.pdfSubject.next(this.url);
   }
 }
