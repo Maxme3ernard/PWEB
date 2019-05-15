@@ -1,25 +1,12 @@
 import { Injectable } from '@angular/core';
-import {Subject} from 'rxjs';
+import {BehaviorSubject} from 'rxjs';
 
-@Injectable({
-  providedIn: 'root'
-})
+@Injectable()
 export class PdfLoaderService {
-  pdfSubject = new Subject();
-  private url: string;
+  public url: BehaviorSubject<string> = new BehaviorSubject<string>('/assets/accueil');
 
   constructor() { }
-  getPDF(anneeTC: string, matiere: string, annee: string): string {
-    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS' + annee;
-    this.emitPdf();
-    return this.url;
-  }
   setPDF(anneeTC: string, matiere: string, annee: string) {
-    this.url = '/assets/' + anneeTC + '/' + matiere + '/DS' + annee;
-    console.log('Loading: ' + this.url);
-    this.emitPdf();
-  }
-  emitPdf() {
-    this.pdfSubject.next(this.url);
+    this.url.next('/assets/' + anneeTC + '/' + matiere + '/DS' + annee);
   }
 }

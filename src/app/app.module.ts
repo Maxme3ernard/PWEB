@@ -6,6 +6,8 @@ import {PdfViewerModule} from 'ng2-pdf-viewer';
 import { PdfDisplayComponent } from './pdf-display/pdf-display.component';
 import {FormsModule} from '@angular/forms';
 import { SelectMatiereComponent } from './select-matiere/select-matiere.component';
+import {PdfLoaderService} from './services/pdf-loader.service';
+
 
 @NgModule({
   declarations: [
@@ -18,7 +20,7 @@ import { SelectMatiereComponent } from './select-matiere/select-matiere.componen
     PdfViewerModule,
     FormsModule,
   ],
-  providers: [],
+  providers: [PdfLoaderService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
