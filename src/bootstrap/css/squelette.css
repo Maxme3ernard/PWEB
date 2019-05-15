@@ -21,6 +21,12 @@ body {
   margin-left: auto;
 }
 
+.form-control{
+  background-color: BLACK;
+  color: WHITE;
+  border: 0px;
+}
+
 @media (min-width: 768px) {
   .container {
     width: 750px;
@@ -36,3 +42,29 @@ body {
     width: 1170px;
   }
 }
+body {
+  background-color:rgb(242, 242, 242);
+}
+
+.styled-select select{
+  background: transparent;
+  color: white;
+  width: 268px;
+  padding: 5px;
+  font-size: 16px;
+  line-height: 1;
+  border: 0;
+  border-radius: 0;
+  height: 34px;
+  -webkit-appearance: none;
+}
+
+.styled-select {
+  width: 240px;
+  height: 34px;
+  overflow: hidden;
+  background: url(new_arrow.png) no-repeat right #ddd;
+  background-color: black;
+  border: 0px;
+}
+
