@@ -1,0 +1,23 @@
+.col-lg-8{
+  background-color: rgb(218, 218, 218);
+  border: 1px solid black;
+  border-radius: 0px;
+  line-height: 20px;
+  text-align: left;
+}
+
+.navbar-fixed-top{
+  background-color: BLACK;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-nav{
+  right: 0;
+  left: 0;
+}
+body{
+  padding-top: 70px;
+}
