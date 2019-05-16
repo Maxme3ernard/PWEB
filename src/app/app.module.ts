@@ -12,6 +12,7 @@ import { ChatComponent } from './chat/chat.component';
 import { LoginComponent } from './login/login.component';
 import {RouterModule} from '@angular/router';
 import {AuthService} from './services/auth.service';
+import { RegisterComponent } from './register/register.component';
 
 
 @NgModule({
@@ -21,6 +22,7 @@ import {AuthService} from './services/auth.service';
     SelectMatiereComponent,
     ChatComponent,
     LoginComponent,
+    RegisterComponent,
   ],
   imports: [
     BrowserModule,
