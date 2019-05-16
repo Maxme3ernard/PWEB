@@ -4,14 +4,14 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
           <li class = "styled-select">
-            <select [(ngModel)]="selectedAnnee" name="anneeTC">
+            <select [(ngModel)]="selectedAnnee" class="form-control" name="anneeTC">
               <option selected disabled>Annee TC</option>
               <option value="3TC">3TC</option>
               <option value="4TC">4TC</option>
             </select>
           </li>
           <li class = "styled-select">
-            <select [(ngModel)]="selectedMatiere" name="matiere">
+            <select [(ngModel)]="selectedMatiere" class="form-control" name="matiere">
               <option selected disabled>Matiere</option>
               <option *ngFor="let matiere of matieres[selectedAnnee]"
                       [value]="matiere">
@@ -20,7 +20,7 @@
             </select>>
           </li>
           <li class = "styled-select">
-            <select [(ngModel)]="selectedFile" name="file">
+            <select [(ngModel)]="selectedFile" class="form-control" name="file">
               <option selected disabled>Annee</option>
               <option *ngFor="let file of files[selectedMatiere]"
                       [value]="file">
