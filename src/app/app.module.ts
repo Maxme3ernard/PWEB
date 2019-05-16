@@ -8,6 +8,10 @@ import {FormsModule} from '@angular/forms';
 import { SelectMatiereComponent } from './select-matiere/select-matiere.component';
 import {PdfLoaderService} from './services/pdf-loader.service';
 import {HttpClientModule} from '@angular/common/http';
+import { ChatComponent } from './chat/chat.component';
+import { LoginComponent } from './login/login.component';
+import {RouterModule} from '@angular/router';
+import {AuthService} from './services/auth.service';
 
 
 @NgModule({
@@ -15,14 +19,19 @@ import {HttpClientModule} from '@angular/common/http';
     AppComponent,
     PdfDisplayComponent,
     SelectMatiereComponent,
+    ChatComponent,
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     PdfViewerModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    RouterModule.forRoot([
+      { path: 'login', component: LoginComponent }
+    ])
   ],
-  providers: [PdfLoaderService],
+  providers: [PdfLoaderService, AuthService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
