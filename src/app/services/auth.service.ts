@@ -6,7 +6,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 })
 export class AuthService {
 
-  private BASE_URL = 'http://localhost:5000/auth';
+  private BASE_URL = 'http://localhost:5000/api';
   private headers: HttpHeaders = new HttpHeaders({'Content-Type': 'application/json'});
   constructor(private http: HttpClient) {}
   login(user): Promise<any> {
