@@ -1,77 +1,41 @@
 <!DOCTYPE html>
 <html>
+<head>
+  <meta charset="utf-8">
+  <title>Navbar Example</title>
+  <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
+  <link href="bootstrap/css/squelette.css" rel="stylesheet">
+</head>
+<body>
+<nav class="navbar navbar-fixed-top">
+  <!-- Brand -->
+  <a class="navbar-brand" href="#">o7planning</a>
+  <!-- Links -->
+  <ul class="navbar-nav">
+    <li class="nav-item">
+      <a class="nav-link" href="#">Java</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link" href="#">C/C++</a>
+    </li>
+    <!-- Dropdown -->
+    <li class="nav-item dropdown">
+      <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">
+        Front-end
+      </a>
+      <div class="dropdown-menu">
+        <a class="dropdown-item" href="#">Javascript</a>
+        <a class="dropdown-item" href="#">Css</a>
+        <a class="dropdown-item" href="#">Bootstrap</a>
+      </div>
+    </li>
+  </ul>
 
-  <head>
-    <link href="bootstrap/css/bootstrap.css" rel="stylesheet">
-    <link href="bootstrap/css/squelette.css" rel="stylesheet">
-  </head>
-  
+</nav>
 
-  
-  <style type="text/css">
-    .col-lg-8 { line-height: 600px; }
-	.col-lg-4 { line-height: 900px; }
-	.col-lg-12{ line-height: 200px; }
-  </style>
-  
-  <body>
-	<div class="container">
-	<div class="row">
-	<table class="table table-bordered table-condensed">
-	   <thead>
-      <tr class="warning">
-		<th> 
-			<select id="select" class="form-control">
-				<option>3TC</option>
-				<option>4TC</option>
-				<option>5TC</option>
-			</select>
-		</th>
-        <th>
-		    <select id="select" class="form-control">
-				<option>Matières</option>
-				<option>ASDS</option>
-				<option>PIR</option>
-			</select>
-		</th>
-		<th>		    
-			<select id="select" class="form-control">
-				<option>TD1</option>
-				<option>TD2</option>
-				<option>TD3</option>
-			</select>
-		</th>
-		<th>
-			<select id="select" class="form-control">
-				<option>DS1</option>
-				<option>DS2</option>
-				<option>DS3</option>
-			</select>
-		</th>
-		<th>
-			<button>Mon compte</button>
-		</th>
-      </tr>
-   </thead>
-   </table>
-  </div>
-	  <div class="row">
-		<article class="col-lg-8"> Sujet <div class="row">
-		<div class="col-md-12">
-			<div class="row">
-			<div class="col-md-12">Lien correction </div>     
-			</div>
-		  <div class="col-md-6">Best </div> 
-		  <div class="col-md-6">Fresh </div> 
-		  <div class="row">
-			<div class="col-lg-12">ARCHIVE</div>
-		  </div>
-		</div> 
-	  </div>
-		</article>     
-		<aside class="col-lg-4">Chat</aside>   
-	  </div> 
-	</div>
-  </body>
-  
+<script src="../node_modules/jquery/dist/jquery.slim.min.js" ></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="bootstrap/js/bootstrap.min.js"></script>
+
+</body>
 </html>

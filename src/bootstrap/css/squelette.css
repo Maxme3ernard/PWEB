@@ -2,10 +2,10 @@ body {
   padding-top: 10px;
 }
 [class*="col-"], footer {
-  background-color: lightblue;
-  border: 2px solid black;
-  border-radius: 6px;
-  line-height: 40px;
+  background-color: transparent;
+  border: 1px solid black;
+  border-radius: 0;
+  line-height: 20px;
   text-align: center;
 }
 
@@ -22,9 +22,9 @@ body {
 }
 
 .form-control{
-  background-color: BLACK;
+  background: #2c3e50;
   color: WHITE;
-  border: 0px;
+  border: 0;
 }
 
 @media (min-width: 768px) {
@@ -46,25 +46,38 @@ body {
   background-color:rgb(242, 242, 242);
 }
 
-.styled-select select{
-  background: transparent;
-  color: white;
-  width: 268px;
-  padding: 5px;
-  font-size: 16px;
-  line-height: 1;
-  border: 0;
-  border-radius: 0;
-  height: 34px;
-  -webkit-appearance: none;
-}
 
+/* Remove IE arrow */
+select::-ms-expand {
+  display: none;
+}
+/* Custom Select */
 .styled-select {
-  width: 240px;
-  height: 34px;
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
   overflow: hidden;
-  background: url(new_arrow.png) no-repeat right #ddd;
-  background-color: black;
-  border: 0px;
+  border-radius: .25em;
 }
 
+/* Arrow */
+.styled-select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+/* Transition */
+.styled-select:hover::after {
+  color: #f39c12;
+}
