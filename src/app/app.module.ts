@@ -7,18 +7,22 @@ import { PdfDisplayComponent } from './pdf-display/pdf-display.component';
 import {FormsModule} from '@angular/forms';
 import { SelectMatiereComponent } from './select-matiere/select-matiere.component';
 import {PdfLoaderService} from './services/pdf-loader.service';
+import {HttpClientModule} from '@angular/common/http';
+import { TestComponent } from './test/test.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     PdfDisplayComponent,
-    SelectMatiereComponent
+    SelectMatiereComponent,
+    TestComponent
   ],
   imports: [
     BrowserModule,
     PdfViewerModule,
     FormsModule,
+    HttpClientModule
   ],
   providers: [PdfLoaderService],
   bootstrap: [AppComponent]

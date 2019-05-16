@@ -4,30 +4,28 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="nav navbar-nav mr-auto">
           <li class = "styled-select">
-            <select id="anneeTC" class="form-control" name="anneeTC"  ngModel>
+            <select [(ngModel)]="selectedAnnee" name="anneeTC">
               <option selected disabled>Annee TC</option>
               <option value="3TC">3TC</option>
               <option value="4TC">4TC</option>
             </select>
           </li>
           <li class = "styled-select">
-            <select id="matiere" class="form-control" name="matiere" ngModel>
+            <select [(ngModel)]="selectedMatiere" name="matiere">
               <option selected disabled>Matiere</option>
-              <option value="PWEB">PWEB</option>
-              <option value="TSA">TSA</option>
-              <option value="WEB">WEB</option>
-            </select>
+              <option *ngFor="let matiere of matieres[selectedAnnee]"
+                      [value]="matiere">
+                {{matiere}}
+              </option>
+            </select>>
           </li>
           <li class = "styled-select">
-            <select id="annee" class="form-control" name="annee" ngModel>
+            <select [(ngModel)]="selectedFile" name="file">
               <option selected disabled>Annee</option>
-              <option value="2018">2018</option>
-              <option value="2017">2017</option>
-              <option value="2016">2016</option>
-              <option value="2015">2015</option>
-              <option value="2014">2014</option>
-              <option value="2013">2013</option>
-              <option value="2008">2008</option>
+              <option *ngFor="let file of files[selectedMatiere]"
+                      [value]="file">
+                {{file}}
+              </option>
             </select>
           </li>
           <li>
