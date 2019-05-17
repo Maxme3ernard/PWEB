@@ -15,6 +15,7 @@ import {AuthService} from './services/auth.service';
 import { RegisterComponent } from './register/register.component';
 import { StatusComponent } from './status/status.component';
 import { NewAccountComponent } from './new-account/new-account.component';
+import { AccueilComponent } from './accueil/accueil.component';
 
 
 @NgModule({
@@ -27,6 +28,7 @@ import { NewAccountComponent } from './new-account/new-account.component';
     RegisterComponent,
     StatusComponent,
     NewAccountComponent,
+    AccueilComponent,
   ],
   imports: [
     BrowserModule,
@@ -37,7 +39,8 @@ import { NewAccountComponent } from './new-account/new-account.component';
       { path: 'login', component: LoginComponent },
       { path: 'create_account', component: RegisterComponent },
       { path: 'status', component: StatusComponent },
-      { path: 'new_account', component: NewAccountComponent }
+      { path: 'new_account', component: NewAccountComponent },
+      { path: 'accueil', component: AccueilComponent }
     ])
   ],
   providers: [PdfLoaderService, AuthService],
