@@ -16,6 +16,9 @@ import { RegisterComponent } from './register/register.component';
 import { StatusComponent } from './status/status.component';
 import { NewAccountComponent } from './new-account/new-account.component';
 import { AccueilComponent } from './accueil/accueil.component';
+import {EnsureAuthenticated} from './services/ensure-authenticated.service';
+import {LoginRedirect} from './services/login-redirect.service';
+import {Log} from '@angular/core/testing/src/logger';
 
 
 @NgModule({
@@ -36,14 +39,14 @@ import { AccueilComponent } from './accueil/accueil.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent },
-      { path: 'create_account', component: RegisterComponent },
-      { path: 'status', component: StatusComponent },
-      { path: 'new_account', component: NewAccountComponent },
-      { path: 'accueil', component: AccueilComponent }
+      { path: 'login', component: LoginComponent, canActivate: [LoginRedirect] },
+      { path: 'create_account', component: RegisterComponent, canActivate: [LoginRedirect] },
+      { path: 'status', component: StatusComponent, canActivate: [EnsureAuthenticated] },
+      { path: 'new_account', component: NewAccountComponent, canActivate: [LoginRedirect] },
+      { path: 'accueil', component: AccueilComponent, canActivate: [EnsureAuthenticated] }
     ])
   ],
-  providers: [PdfLoaderService, AuthService],
+  providers: [PdfLoaderService, AuthService, EnsureAuthenticated, LoginRedirect],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
