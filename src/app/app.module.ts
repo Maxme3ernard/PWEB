@@ -13,6 +13,8 @@ import { LoginComponent } from './login/login.component';
 import {RouterModule} from '@angular/router';
 import {AuthService} from './services/auth.service';
 import { RegisterComponent } from './register/register.component';
+import { StatusComponent } from './status/status.component';
+import { NewAccountComponent } from './new-account/new-account.component';
 
 
 @NgModule({
@@ -23,6 +25,8 @@ import { RegisterComponent } from './register/register.component';
     ChatComponent,
     LoginComponent,
     RegisterComponent,
+    StatusComponent,
+    NewAccountComponent,
   ],
   imports: [
     BrowserModule,
@@ -30,7 +34,10 @@ import { RegisterComponent } from './register/register.component';
     FormsModule,
     HttpClientModule,
     RouterModule.forRoot([
-      { path: 'login', component: LoginComponent }
+      { path: 'login', component: LoginComponent },
+      { path: 'create_account', component: RegisterComponent },
+      { path: 'status', component: StatusComponent },
+      { path: 'new_account', component: NewAccountComponent }
     ])
   ],
   providers: [PdfLoaderService, AuthService],
