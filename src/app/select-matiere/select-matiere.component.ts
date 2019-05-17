@@ -16,11 +16,16 @@ export class SelectMatiereComponent implements OnInit {
   private selectedMatiere: string;
   private selectedFile: string;
   private selectedAnnee: string;
+  filesLoaded: Promise<boolean>;
+  matieresLoaded: Promise<boolean>;
+
   constructor(private pdfLoaderService: PdfLoaderService, private httpClient: HttpClient) { }
+
   ngOnInit() {
     this.getFilesFromServer();
     this.getMatieresFromServer();
   }
+
   onSubmit(form: NgForm) {
     const anneeTC = form.value.anneeTC;
     const matiere = form.value.matiere;
@@ -31,6 +36,7 @@ export class SelectMatiereComponent implements OnInit {
     this.httpClient.get('http://127.0.0.1:5000/api/matieres').subscribe(
       data => {
         this.matieres = data as string [];
+        this.matieresLoaded = Promise.resolve(true);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -40,10 +46,8 @@ export class SelectMatiereComponent implements OnInit {
   getFilesFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/files').subscribe(
       data => {
-        const transFiles = data as string [];
-        transFiles.forEach((file) => {
-          file.split('_');
-        });
+        this.files = data as string[];
+        this.filesLoaded = Promise.resolve(true);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
