@@ -81,3 +81,6 @@ select::-ms-expand {
 .styled-select:hover::after {
  color: #f39c12;
 }
+.logbox{
+  background-color:white;
+}
