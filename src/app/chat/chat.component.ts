@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import * as io from 'socket.io-client';
+import {ChatService} from '../services/chat.service';
 
 @Component({
   selector: 'app-chat',
@@ -8,21 +8,17 @@ import * as io from 'socket.io-client';
 })
 export class ChatComponent implements OnInit {
 
-  constructor() { }
-  private socket;
-  message;
+  private message: string;
+
+  constructor(private chat: ChatService) { }
+
   ngOnInit() {
-    this.socket = io.connect('http://127.0.0.1:5000');
-    this.socket.on('chat message', (msg) => {
-      const li = document.createElement('li');
-      li.appendChild(document.createTextNode(msg));
-      document.getElementById('messages').appendChild(li);
-      console.log(li);
+    this.chat.messages.subscribe(msg => {
+      console.log(msg);
     });
   }
-  send() {
-    this.socket.emit('my event', this.message);
-    // console.log(this.message);
-    this.message = '';
+
+  sendMessage() {
+    this.chat.sendMsg(this.message);
   }
 }
