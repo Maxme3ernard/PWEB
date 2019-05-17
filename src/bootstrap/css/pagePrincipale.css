@@ -1,3 +1,13 @@
+body{
+  padding-top: 70px;
+}
+
+option {
+  color:white;
+  background: #2c3e50;
+  border: 0;
+}
+
 .col-lg-9{
   background-color: transparent;
   border: 0;
@@ -15,8 +25,55 @@
   position:fixed;
 }
 
+.navbar-fixed-top{
+  background: #2c3e50;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+.navbar-brand{
+  color:antiquewhite;
+  font-family: Impact;
+  font-size:30px;
+}
+
+.navbar-nav{
+  right: 0;
+  left: 0;
+}
+
+.PDFdisplayer{
+  height:900px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  z-index: -1;
+}
+
+#PDFdisplayer::-webkit-scrollbar {
+  display: none;
+}
+
+.sujet{
+  background-color:darkred;
+}
+
+.correction{
+  background-color:green;
+}
+
+.fresh{
+  background-color:green;
+}
+
+.best{
+  background-color:darkred;
+}
+
 
 .chat{
+  top:80px;
   color: WHITE;
   height: 600px;
   left: 70%;
@@ -28,47 +85,17 @@
   border-radius: 0;
   text-align:left;
   height:40px;
-  top:650px;
+  top:680px;
   left: 70%;
 }
-.navbar-fixed-top{
-  background: #2c3e50;
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-}
 
-.navbar-nav{
-  right: 0;
-  left: 0;
-}
-
-
-.PDFdisplayer{
-  height:900px;
-  overflow-y:scroll;
-  overflow-x:hidden;
-}
-
-#PDFdisplayer::-webkit-scrollbar {
-  display: none;
-}
-
-.DS{
-  background-color:darkred;
-}
-
-.correction{
-  background-color:green;
-}
-
-body{
-  padding-top: 70px;
-}
-
-option {
-  color:white;
-  background: #2c3e50;
-  border: 0;
+.chatButton{
+  background-color: LIGHTBLUE;
+  border-radius: 0;
+  text-align:left;
+  height:40px;
+  top:680px;
+  left:86.5%;
+  position:fixed;
+  border: 1px black ridge;
 }

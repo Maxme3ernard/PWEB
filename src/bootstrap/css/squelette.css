@@ -79,5 +79,5 @@ select::-ms-expand {
 }
 /* Transition */
 .styled-select:hover::after {
-  color: #f39c12;
+ color: #f39c12;
 }
