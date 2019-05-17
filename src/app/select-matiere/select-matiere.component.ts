@@ -40,10 +40,7 @@ export class SelectMatiereComponent implements OnInit {
   getFilesFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/files').subscribe(
       data => {
-        const transFiles = data as string [];
-        transFiles.forEach((file) => {
-          file.split('_');
-        });
+          this.files = data as string[];
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);

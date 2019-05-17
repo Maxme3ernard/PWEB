@@ -77,10 +77,12 @@ select::-ms-expand {
   -o-transition: .25s all ease;
   transition: .25s all ease;
 }
+
 /* Transition */
 .styled-select:hover::after {
  color: #f39c12;
 }
+
 .logbox{
   background-color:white;
 }
