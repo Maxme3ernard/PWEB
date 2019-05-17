@@ -15,7 +15,9 @@ export class NewAccountComponent implements OnInit {
   }
   onSubmit() {
     this.auth.login(this.user).then((user) => {
-      console.log(user);
+      if (!user.success) {
+        console.log(user.result);
+      }
     }).catch((err) => {
       console.log(err);
     });

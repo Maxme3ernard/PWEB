@@ -28,7 +28,7 @@ export class SelectMatiereComponent implements OnInit {
     this.pdfLoaderService.setPDF(anneeTC, matiere, file);
   }
   getMatieresFromServer() {
-    this.httpClient.get('http://127.0.0.1:5000/admin/matieres.json').subscribe(
+    this.httpClient.get('http://127.0.0.1:5000/api/matieres').subscribe(
       data => {
         this.matieres = data as string [];
         console.log(this.files['PWEB']);
@@ -39,7 +39,7 @@ export class SelectMatiereComponent implements OnInit {
     );
   }
   getFilesFromServer() {
-    this.httpClient.get('http://127.0.0.1:5000/admin/files.json').subscribe(
+    this.httpClient.get('http://127.0.0.1:5000/api/files').subscribe(
       data => {
         this.files = data as string [];
         console.log(this.matieres['3TC']);
