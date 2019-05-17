@@ -13,14 +13,14 @@
                 <option value="4TC">4TC</option>
               </select>
             </li>
-            <li class = "styled-select" >
+            <li  *ngIf="matieresLoaded | async" class = "styled-select" >
               <select [(ngModel)]="selectedMatiere" class="form-control" name="matiere">
                 <option selected disabled> Matière </option>
                 <option *ngFor="let matiere of matieres[selectedAnnee]"
                         [value]="matiere"> {{matiere}} </option>
               </select>
             </li>
-            <li class = "styled-select">
+            <li *ngIf="filesLoaded | async" class = "styled-select">
               <select [(ngModel)]="selectedFile" class="form-control" name="file">
                 <option selected disabled> Annee </option>
                 <option *ngFor="let file of files[selectedMatiere]"
@@ -42,7 +42,7 @@
 </div>
 
 <div class="container">
-  <button class="btn col-md-4 sujet" type="submit">Sujet</button>
-  <button class="btn col-md-offset-1 col-md-4 correction" type="submit">Correction</button>
+  <button (click)="switchToSujet()" class="btn col-md-4 sujet">Sujet</button>
+  <button (click)="switchToCorrection()" class="btn col-md-offset-1 col-md-4 correction">Correction</button>
 </div>
 
