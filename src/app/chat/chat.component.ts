@@ -19,6 +19,10 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage() {
-    this.chat.sendMsg(this.message);
+    const data = {
+      username: 'TomTom',
+      message: this.message
+    };
+    this.chat.sendMsg(data);
   }
 }
