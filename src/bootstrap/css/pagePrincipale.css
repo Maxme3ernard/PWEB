@@ -57,12 +57,10 @@ option {
 
 .sujet{
   background-color:darkred;
-  position:fixed;
 }
 
 .correction{
   background-color:green;
-  position:fixed;
 }
 
 .fresh{
