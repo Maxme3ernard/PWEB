@@ -23,7 +23,38 @@ option {
   text-align: left;
   border: 1px black ridge;
   position:fixed;
+  left: 70%;
 }
+
+.col-sm-8{
+}
+
+.chat{
+  top:80px;
+  color: WHITE;
+  height: 600px;
+}
+
+.chatInput{
+  background-color: white;
+  border-radius: 0;
+  text-align:left;
+  height:40px;
+  top:680px;
+}
+
+.chatButton{
+  background-color: LIGHTBLUE;
+  border-radius: 0;
+  text-align:left;
+  height:40px;
+  top:680px;
+  left:86.5%;
+  position:fixed;
+  border: 1px black ridge;
+}
+
+
 
 .navbar-fixed-top{
   background: #2c3e50;
@@ -63,39 +94,4 @@ option {
   background-color:green;
 }
 
-.fresh{
-  background-color:green;
-}
 
-.best{
-  background-color:darkred;
-}
-
-
-.chat{
-  top:80px;
-  color: WHITE;
-  height: 600px;
-  left: 70%;
-  position:fixed;
-}
-
-.chatInput{
-  background-color: white;
-  border-radius: 0;
-  text-align:left;
-  height:40px;
-  top:680px;
-  left: 70%;
-}
-
-.chatButton{
-  background-color: LIGHTBLUE;
-  border-radius: 0;
-  text-align:left;
-  height:40px;
-  top:680px;
-  left:86.5%;
-  position:fixed;
-  border: 1px black ridge;
-}
