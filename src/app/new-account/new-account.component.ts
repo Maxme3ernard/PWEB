@@ -14,7 +14,7 @@ export class NewAccountComponent implements OnInit {
   ngOnInit() {
   }
   onSubmit() {
-    this.auth.login(this.user).then((user) => {
+    this.auth.newAccount(this.user).then((user) => {
       if (!user.success) {
         console.log(user.result);
       }
