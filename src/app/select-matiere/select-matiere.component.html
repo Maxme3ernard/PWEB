@@ -6,29 +6,29 @@
           <ul class="navbar-header">
             <div class="navbar-brand" >Queriddle </div>
           </ul>
-          <li class = "styled-select">
-            <select [(ngModel)]="selectedAnnee" class="form-control" name="anneeTC">
-              <option selected disabled>Annee TC</option>
-              <option value="3TC">3TC</option>
-              <option value="4TC">4TC</option>
-            </select>
-          </li>
-          <li  class = "styled-select" >
-            <select [(ngModel)]="selectedMatiere" class="form-control" name="matiere">
-              <option selected disabled> Matière </option>
-              <option *ngFor="let matiere of matieres[selectedAnnee]"
-                      [value]="matiere"> {{matiere}} </option>
-            </select>
-          </li>
-          <li class = "styled-select">
-            <select [(ngModel)]="selectedFile" class="form-control" name="file">
-              <option selected disabled> Annee </option>
-              <option *ngFor="let file of files[selectedMatiere]"
-                      [value]="file">
-                {{file}}
-              </option>
-            </select>
-          </li>
+            <li class = "styled-select">
+              <select [(ngModel)]="selectedAnnee" class="form-control" name="anneeTC">
+                <option selected disabled>Annee TC</option>
+                <option value="3TC">3TC</option>
+                <option value="4TC">4TC</option>
+              </select>
+            </li>
+            <li  *ngIf="matieresLoaded | async" class = "styled-select" >
+              <select [(ngModel)]="selectedMatiere" class="form-control" name="matiere">
+                <option selected disabled> Matière </option>
+                <option *ngFor="let matiere of matieres[selectedAnnee]"
+                        [value]="matiere"> {{matiere}} </option>
+              </select>
+            </li>
+            <li *ngIf="filesLoaded | async" class = "styled-select">
+              <select [(ngModel)]="selectedFile" class="form-control" name="file">
+                <option selected disabled> Annee </option>
+                <option *ngFor="let file of files[selectedMatiere]"
+                        [value]="file">
+                  {{file}}
+                </option>
+              </select>
+            </li>
           <li>
             <button class="btn btn-primary" type="submit">Choisir</button>
           </li>
