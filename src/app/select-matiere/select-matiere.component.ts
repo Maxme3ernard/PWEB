@@ -16,6 +16,10 @@ export class SelectMatiereComponent implements OnInit {
   private selectedMatiere: string;
   private selectedFile: string;
   private selectedAnnee: string;
+  private anneeTC: string;
+  private matiere: string;
+  private file: string;
+
   filesLoaded: Promise<boolean>;
   matieresLoaded: Promise<boolean>;
 
@@ -27,10 +31,10 @@ export class SelectMatiereComponent implements OnInit {
   }
 
   onSubmit(form: NgForm) {
-    const anneeTC = form.value.anneeTC;
-    const matiere = form.value.matiere;
-    const file = form.value.file;
-    this.pdfLoaderService.setPDF(anneeTC, matiere, file);
+    this.anneeTC = form.value.anneeTC;
+    this.matiere = form.value.matiere;
+    this.file = form.value.file;
+    this.pdfLoaderService.setPDF(this.anneeTC, this.matiere, this.file + '_s');
   }
   getMatieresFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/matieres').subscribe(
@@ -53,5 +57,11 @@ export class SelectMatiereComponent implements OnInit {
         console.log (err.message);
       }
     );
+  }
+  switchToCorrection() {
+    this.pdfLoaderService.setPDF(this.anneeTC, this.matiere, this.file + '_c');
+  }
+  switchToSujet() {
+    this.pdfLoaderService.setPDF(this.anneeTC, this.matiere, this.file + '_s');
   }
 }

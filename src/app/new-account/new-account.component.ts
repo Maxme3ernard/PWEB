@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {AuthService} from '../services/auth.service';
 import {User} from '../models/user';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-new-account',
@@ -9,7 +10,7 @@ import {User} from '../models/user';
 })
 export class NewAccountComponent implements OnInit {
   user: User = new User();
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
   }
@@ -17,6 +18,7 @@ export class NewAccountComponent implements OnInit {
     this.auth.newAccount(this.user).then((user) => {
       if (!user.success) {
         console.log(user.result);
+        this.router.navigateByUrl('/create_account');
       }
     }).catch((err) => {
       console.log(err);

@@ -10,11 +10,10 @@ import {PdfLoaderService} from '../services/pdf-loader.service';
 })
 export class PdfDisplayComponent implements OnInit {
   pdfSrc: string;
-  @Input() type: string;
   // pdfSubscription: Subscription;
   constructor(private pdfLoaderService: PdfLoaderService) {
     this.pdfLoaderService.url.subscribe( value => {
-      this.pdfSrc = value;
+      this.pdfSrc = value + '.pdf';
     });
   }
 
@@ -23,4 +22,5 @@ export class PdfDisplayComponent implements OnInit {
     // this.pdfLoaderService.emitPdf();
     // this.pdfSrc = 'assets/accueil';
   }
+
 }
