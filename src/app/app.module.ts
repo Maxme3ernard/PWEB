@@ -43,7 +43,8 @@ import {Log} from '@angular/core/testing/src/logger';
       { path: 'create_account', component: RegisterComponent, canActivate: [LoginRedirect] },
       { path: 'status', component: StatusComponent, canActivate: [EnsureAuthenticated] },
       { path: 'new_account', component: NewAccountComponent, canActivate: [LoginRedirect] },
-      { path: 'accueil', component: AccueilComponent, canActivate: [EnsureAuthenticated] }
+      { path: 'accueil', component: AccueilComponent, canActivate: [EnsureAuthenticated] },
+      { path: '', component: AccueilComponent }
     ])
   ],
   providers: [PdfLoaderService, AuthService, EnsureAuthenticated, LoginRedirect],
