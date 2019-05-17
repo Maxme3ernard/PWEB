@@ -31,7 +31,6 @@ export class SelectMatiereComponent implements OnInit {
     this.httpClient.get('http://127.0.0.1:5000/api/matieres').subscribe(
       data => {
         this.matieres = data as string [];
-        console.log(this.files['PWEB']);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -42,7 +41,6 @@ export class SelectMatiereComponent implements OnInit {
     this.httpClient.get('http://127.0.0.1:5000/api/files').subscribe(
       data => {
         this.files = data as string [];
-        console.log(this.matieres['3TC']);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
