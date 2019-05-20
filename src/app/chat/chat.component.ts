@@ -72,11 +72,9 @@ export class ChatComponent implements OnInit {
     };
     if (msg.uservote === 1) {
       msg.uservote = 0;
-      msg.score--;
       data.valeur = -1;
     } else {
       msg.uservote = 1;
-      msg.score++;
       data.valeur = 1;
     }
     this.chat.sendMsg(data);
