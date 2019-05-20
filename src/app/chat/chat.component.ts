@@ -44,7 +44,8 @@ export class ChatComponent implements OnInit {
       const data = {
         username: localStorage.getItem('username'),
         message: this.message,
-        matiere: this.currentMatiere
+        matiere: this.currentMatiere,
+        type: 'message'
       };
       this.chat.sendMsg(data);
       this.message = '';
@@ -66,6 +67,7 @@ export class ChatComponent implements OnInit {
     const data = {
       id: msg.id,
       username: localStorage.getItem('username'),
+      type: 'like',
       valeur: 0,
     };
     if (msg.uservote === 1) {
