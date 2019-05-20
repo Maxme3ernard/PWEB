@@ -38,10 +38,25 @@ option {
   overflow-x:hidden;
 }
 
+.chatMessageInside{
+  margin-left:-30px;
+}
+
+.chatUpvote{
+  margin-left:-10px;
+  background-color: #2c3e50;
+  color:white;
+  border-radius:5px;
+  position:relative;
+  size:20px;
+}
+
 .chatMessage{
   background:white;
   color: #2c3e50;
   border-radius:10px;
+  margin-left: -10px;
+  margin-right: -10px;
 }
 
 .chatInput{
@@ -62,13 +77,6 @@ option {
   left:86.5%;
   position:fixed;
   border: 1px black ridge;
-}
-
-.chatUpvote{
-  background-color: LIGHTBLUE;
-  border-radius:10px;
-  position:relative;
-  left: -30px;
 }
 
 .navbar-fixed-top{
