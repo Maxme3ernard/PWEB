@@ -18,7 +18,6 @@ import { NewAccountComponent } from './new-account/new-account.component';
 import { AccueilComponent } from './accueil/accueil.component';
 import {EnsureAuthenticated} from './services/ensure-authenticated.service';
 import {LoginRedirect} from './services/login-redirect.service';
-import {Log} from '@angular/core/testing/src/logger';
 import {WebSocketService} from './services/web-socket.service';
 import {ChatService} from './services/chat.service';
 

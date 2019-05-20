@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import {User} from '../models/user';
+import * as jwt_decode from 'jwt-decode';
 
 @Injectable({
   providedIn: 'root'
@@ -24,6 +25,33 @@ export class AuthService {
   newAccount(user: User): Promise<any> {
     const url = `${this.BASE_URL}/new_account`;
     return this.http.post(url, user, {headers: this.headers}).toPromise();
+  }
+
+  getTokenExpirationDate(token): Date {
+    const decoded = jwt_decode(token);
+
+    if (decoded.exp === undefined) {
+      return null;
+    }
+
+    const date = new Date(0);
+    date.setUTCSeconds(decoded.exp);
+    return date;
+  }
+
+  isTokenExpired(token?: string): boolean {
+    if (!token) {
+      token = localStorage.getItem('token');
+    }
+    if (!token) {
+      return true;
+    }
+
+    const date = this.getTokenExpirationDate(token);
+    if (date === undefined) {
+      return false;
+    }
+    return !(date.valueOf() > new Date().valueOf());
   }
 
   ensureAuthenticated(token): Promise<any> {
