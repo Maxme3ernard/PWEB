@@ -1,7 +1,8 @@
 <ul id="messages"></ul>
 
 <div *ngFor="let message of messages" >
-  <ul *ngIf="message.matiere === currentMatiere"><b>{{ message.username }}</b>: {{ message.message }}</ul>
+  <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">
+    <b (click)="doVote(message)" class = "chatUpvote"> 	👍  {{message.score}}</b><b> {{ message.username }}</b>: {{ message.message }}</ul>
 </div>
 
 <div class="chatInput">

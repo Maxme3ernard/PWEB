@@ -6,7 +6,6 @@ body {
   border: 1px solid black;
   border-radius: 0;
   line-height: 20px;
-  text-align: center;
 }
 
 .row {
@@ -15,8 +14,6 @@ body {
 }
 
 .container {
-  padding-right: 15px;
-  padding-left: 15px;
   margin-right: auto;
   margin-left: auto;
 }
