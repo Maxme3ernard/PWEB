@@ -2,9 +2,7 @@
 
 <div *ngFor="let message of messages" >
   <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">
-    <p class = "chatMessageInside">
-      <b (click)="doVote(message)" class = "chatUpvote"> 	👍  {{message.score}}</b><b class = "chatUsername"> {{ message.username }}</b>: {{ message.message }}
-    </p>
+      <b (click)="doVote(message)" > 	👍  {{message.score}} | </b><b class = "chatUsername"> {{ message.username }}</b>: {{ message.message }}
   </ul>
 </div>
 
