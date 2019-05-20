@@ -29,11 +29,13 @@ export class ChatComponent implements OnInit {
   }
 
   sendMessage() {
-    const data = {
-      username: localStorage.getItem('username'),
-      message: this.message
-    };
-    this.chat.sendMsg(data);
-    this.message = '';
+    if (this.message !== '') {
+      const data = {
+        username: localStorage.getItem('username'),
+        message: this.message
+      };
+      this.chat.sendMsg(data);
+      this.message = '';
+    }
   }
 }
