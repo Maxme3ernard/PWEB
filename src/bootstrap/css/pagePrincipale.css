@@ -33,14 +33,18 @@ option {
   top:80px;
   color: WHITE;
   height: 600px;
+  overflow-y: scroll;
+  scroll-behavior: smooth;
 }
 
 .chatInput{
+  color: black;
   background-color: white;
   border-radius: 0;
   text-align:left;
   height:40px;
   top:680px;
+  position:fixed;
 }
 
 .chatButton{

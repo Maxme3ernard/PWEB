@@ -1,11 +1,11 @@
 <ul id="messages"></ul>
 
-<div *ngFor="let message of messages">
+<div *ngFor="let message of messages" >
   <ul *ngIf="message.matiere === currentMatiere"><b>{{ message.username }}</b>: {{ message.message }}</ul>
 </div>
 
-  <div>
-  <form (ngSubmit)="sendMessage()">
+<div class="chatInput">
+  <form (ngSubmit)="sendMessage()" >
     <input type="text" id="message" placeholder="Tapez un message" [(ngModel)]="message" name="message">
     <button type="submit" class="btn btn-default">Envoyer</button>
   </form>
