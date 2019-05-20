@@ -33,6 +33,7 @@ export class SelectMatiereComponent implements OnInit {
   onSubmit(form: NgForm) {
     this.anneeTC = form.value.anneeTC;
     this.matiere = form.value.matiere;
+    localStorage.setItem('matiere', this.matiere);
     this.file = form.value.file;
     this.pdfLoaderService.setPDF(this.anneeTC, this.matiere, this.file + '_s');
   }

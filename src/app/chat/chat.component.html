@@ -1,6 +1,6 @@
 <ul id="messages"></ul>
 <div *ngFor="let message of messages">
-  <b>{{ message.username }}</b>: {{ message.message }}
+  <ul *ngIf="message.matiere === currentMatiere"><b>{{ message.username }}</b>: {{ message.message }}</ul>
 </div>
 <div>
   <form (ngSubmit)="sendMessage()">

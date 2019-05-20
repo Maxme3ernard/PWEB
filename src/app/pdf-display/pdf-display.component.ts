@@ -10,7 +10,6 @@ import {PdfLoaderService} from '../services/pdf-loader.service';
 })
 export class PdfDisplayComponent implements OnInit {
   pdfSrc: string;
-  // pdfSubscription: Subscription;
   constructor(private pdfLoaderService: PdfLoaderService) {
     this.pdfLoaderService.url.subscribe( value => {
       this.pdfSrc = value + '.pdf';
