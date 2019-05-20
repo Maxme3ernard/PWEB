@@ -45,7 +45,8 @@ export class ChatComponent implements OnInit {
         username: localStorage.getItem('username'),
         message: this.message,
         matiere: this.currentMatiere,
-        type: 'message'
+        type: 'message',
+        score: 0
       };
       this.chat.sendMsg(data);
       this.message = '';
@@ -54,7 +55,6 @@ export class ChatComponent implements OnInit {
   getMessageFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/messages').subscribe(
       data => {
-        console.log(data);
         this.messages = data as Array<Message>;
         this.messagesLoaded = Promise.resolve(true);
       },
