@@ -4,10 +4,12 @@ import {PdfLoaderService} from '../services/pdf-loader.service';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 interface Message {
+  id;
   message: string;
   username: string;
   matiere: string;
   score;
+  uservote;
 }
 
 @Component({
@@ -59,5 +61,22 @@ export class ChatComponent implements OnInit {
         console.log (err.message);
       }
     );
+  }
+  doVote(msg: Message) {
+    const data = {
+      id: msg.id,
+      username: localStorage.getItem('username'),
+      valeur: 0,
+    };
+    if (msg.uservote === 1) {
+      msg.uservote = 0;
+      msg.score--;
+      data.valeur = -1;
+    } else {
+      msg.uservote = 1;
+      msg.score++;
+      data.valeur = 1;
+    }
+    this.chat.sendMsg(data);
   }
 }

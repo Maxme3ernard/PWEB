@@ -1,7 +1,8 @@
 <ul id="messages"></ul>
 
 <div *ngFor="let message of messages">
-  <ul *ngIf="message.matiere === currentMatiere"><b>{{ message.username }}</b>: {{ message.message }}</ul>
+  <ul *ngIf="message.matiere === currentMatiere">
+    <b (click)="doVote(message)">{{message.score}}</b><b> {{ message.username }}</b>: {{ message.message }}</ul>
 </div>
 
   <div>
