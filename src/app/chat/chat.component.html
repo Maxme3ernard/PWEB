@@ -1,9 +1,11 @@
 <ul id="messages"></ul>
 
-<div *ngFor="let message of messages" >
-  <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">
+<div *ngIf="messagesLoaded | async">
+  <div *ngFor="let message of messages" >
+    <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">
       <b (click)="doVote(message)" > 	👍  {{message.score}} | </b><b class = "chatUsername"> {{ message.username }}</b>: {{ message.message }}
-  </ul>
+    </ul>
+  </div>
 </div>
 
 <div class="chatInput">
