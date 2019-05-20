@@ -68,7 +68,7 @@ export class ChatComponent implements OnInit {
       id: msg.id,
       username: localStorage.getItem('username'),
       type: 'like',
-      valeur: 0,
+      valeur: 0
     };
     if (msg.uservote === 1) {
       msg.uservote = 0;
