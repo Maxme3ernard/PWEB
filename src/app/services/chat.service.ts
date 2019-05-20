@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import {Subject} from 'node_modules/rxjs';
 import {WebSocketService} from './web-socket.service';
 import { map } from 'rxjs/operators';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 
 

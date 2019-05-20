@@ -1,11 +1,13 @@
 import { Component, OnInit } from '@angular/core';
 import {ChatService} from '../services/chat.service';
 import {PdfLoaderService} from '../services/pdf-loader.service';
+import {HttpClient, HttpErrorResponse} from '@angular/common/http';
 
 interface Message {
   message: string;
   username: string;
   matiere: string;
+  score;
 }
 
 @Component({
@@ -17,10 +19,11 @@ interface Message {
 export class ChatComponent implements OnInit {
 
   private messages: Array<Message>;
+  private messagesLoaded: Promise<boolean>;
   private message: string;
   private currentMatiere: string;
 
-  constructor(private chat: ChatService, private pdfLoaderService: PdfLoaderService) {
+  constructor(private chat: ChatService, private pdfLoaderService: PdfLoaderService, private httpClient: HttpClient) {
     this.messages = [];
     this.pdfLoaderService.currentMatiere.subscribe( value => {
       this.currentMatiere = value;
@@ -28,6 +31,7 @@ export class ChatComponent implements OnInit {
   }
 
   ngOnInit() {
+    this.getMessageFromServer();
     this.chat.messages.subscribe(msg => {
       this.messages.push(msg);
     });
@@ -43,5 +47,17 @@ export class ChatComponent implements OnInit {
       this.chat.sendMsg(data);
       this.message = '';
     }
+  }
+  getMessageFromServer() {
+    this.httpClient.get('http://127.0.0.1:5000/api/messages').subscribe(
+      data => {
+        console.log(data);
+        this.messages = data as Array<Message>;
+        this.messagesLoaded = Promise.resolve(true);
+      },
+      (err: HttpErrorResponse) => {
+        console.log (err.message);
+      }
+    );
   }
 }

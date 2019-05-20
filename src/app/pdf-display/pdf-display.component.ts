@@ -1,5 +1,4 @@
-import {Component, Input, OnInit} from '@angular/core';
-import {Subscription} from 'rxjs';
+import {Component, OnInit} from '@angular/core';
 import {PdfLoaderService} from '../services/pdf-loader.service';
 
 
@@ -17,9 +16,6 @@ export class PdfDisplayComponent implements OnInit {
   }
 
   ngOnInit() {
-    // this.pdfSubscription = this.pdfLoaderService.pdfSubject.subscribe((lien: string) => {this.pdfSrc = lien; });
-    // this.pdfLoaderService.emitPdf();
-    // this.pdfSrc = 'assets/accueil';
   }
 
 }
