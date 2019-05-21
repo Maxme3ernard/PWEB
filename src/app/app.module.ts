@@ -50,8 +50,7 @@ import { PostComponent } from './post/post.component';
       { path: 'new_account', component: NewAccountComponent, canActivate: [LoginRedirect] },
       { path: 'accueil', component: AccueilComponent, canActivate: [EnsureAuthenticated] },
       { path: '', component: AccueilComponent, canActivate: [EnsureAuthenticated] },
-      { path: 'chat', component: ChatComponent, canActivate: [EnsureAuthenticated] },
-      { path: 'blog', component: BlogComponent, canActivate: [EnsureAuthenticated] }
+      { path: 'chat', component: ChatComponent, canActivate: [EnsureAuthenticated] }
     ])
   ],
   providers: [PdfLoaderService, AuthService, EnsureAuthenticated, LoginRedirect, WebSocketService, ChatService, PostComponent],

@@ -49,13 +49,24 @@ export class PostComponent implements OnInit {
       const data = {
         ['id']: this.id,
         ['message']: this.response,
-        ['username']: localStorage.getItem('username'),
-        ['score']: 0
+        ['username']: localStorage.getItem('username')
       };
       this.response = '';
       this.responses.push(data as Post);
       console.log(data);
       this.auth.postResponse(data);
     }
+  }
+  doVote() {
+    const params = new HttpParams();
+    params.set('id', this.id);
+    this.http.get('http://127.0.0.1:5000/api/posts/like', {params}).subscribe(
+      data => {
+        this.score = data;
+      },
+      (err: HttpErrorResponse) => {
+        console.log (err.message);
+      }
+    );
   }
 }

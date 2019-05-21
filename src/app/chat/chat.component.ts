@@ -43,7 +43,6 @@ export class ChatComponent implements OnInit {
         const index = this.messages.indexOf(updateMsg);
         this.messages[index].score = msg.score;
       }
-      console.log(this.messages);
     });
   }
 
