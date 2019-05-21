@@ -35,7 +35,15 @@ export class ChatComponent implements OnInit {
   ngOnInit() {
     this.getMessageFromServer();
     this.chat.messages.subscribe(msg => {
-      this.messages.push(msg);
+      if (msg.type === 'message') {
+        this.messages.push(msg);
+      }
+      if (msg.type === 'like') {
+        const updateMsg = this.messages.find((x) => x.id === msg.id);
+        const index = this.messages.indexOf(updateMsg);
+        this.messages[index].score = msg.score;
+      }
+      console.log(this.messages);
     });
   }
 
@@ -52,6 +60,7 @@ export class ChatComponent implements OnInit {
       this.message = '';
     }
   }
+
   getMessageFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/messages').subscribe(
       data => {
@@ -63,6 +72,7 @@ export class ChatComponent implements OnInit {
       }
     );
   }
+
   doVote(msg: Message) {
     const data = {
       id: msg.id,

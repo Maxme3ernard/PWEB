@@ -54,8 +54,8 @@ export class PostComponent implements OnInit {
       };
       this.response = '';
       this.responses.push(data as Post);
-      console.log(  data);
-      // this.auth.postResponse(data);
+      console.log(data);
+      this.auth.postResponse(data);
     }
   }
 }

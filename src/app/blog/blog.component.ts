@@ -25,7 +25,7 @@ export class BlogComponent implements OnInit {
   constructor(private pdfService: PdfLoaderService, private auth: AuthService, private post: PostComponent, private http: HttpClient) { }
 
   ngOnInit() {
-    this.getPostFromServer()
+    this.getPostFromServer();
     this.pdfService.currentMatiere.subscribe( value => {
       this.currentMatiere = value;
     });
