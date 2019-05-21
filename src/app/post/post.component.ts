@@ -6,7 +6,6 @@ interface Post {
   id;
   message: string;
   username: string;
-  matiere: string;
   score;
 }
 
@@ -23,6 +22,7 @@ export class PostComponent implements OnInit {
   @Input() message;
   @Input() username;
   @Input() score;
+  @Input() matiere;
 
   constructor(private http: HttpClient, private auth: AuthService) { }
 
@@ -36,7 +36,6 @@ export class PostComponent implements OnInit {
     this.http.get('http://127.0.0.1:5000/api/responses', {params}).subscribe(
       data => {
         this.responses = data as Array<Post>;
-        console.log(this.responses);
         this.responsesLoaded = Promise.resolve(true);
       },
       (err: HttpErrorResponse) => {
@@ -55,7 +54,7 @@ export class PostComponent implements OnInit {
       };
       this.response = '';
       this.responses.push(data as Post);
-      console.log(data);
+      console.log(  data);
       // this.auth.postResponse(data);
     }
   }
