@@ -62,4 +62,9 @@ export class AuthService {
     });
     return this.http.get(url, {headers}).toPromise();
   }
+
+  postResponse(data): Promise<any> {
+    const url = `${this.BASE_URL}/respond`;
+    return this.http.post(url, data, {headers: this.headers}).toPromise();
+  }
 }

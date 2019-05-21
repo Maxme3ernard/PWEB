@@ -20,6 +20,8 @@ import {EnsureAuthenticated} from './services/ensure-authenticated.service';
 import {LoginRedirect} from './services/login-redirect.service';
 import {WebSocketService} from './services/web-socket.service';
 import {ChatService} from './services/chat.service';
+import { BlogComponent } from './blog/blog.component';
+import { PostComponent } from './post/post.component';
 
 
 @NgModule({
@@ -33,6 +35,8 @@ import {ChatService} from './services/chat.service';
     StatusComponent,
     NewAccountComponent,
     AccueilComponent,
+    BlogComponent,
+    PostComponent,
   ],
   imports: [
     BrowserModule,
@@ -46,10 +50,11 @@ import {ChatService} from './services/chat.service';
       { path: 'new_account', component: NewAccountComponent, canActivate: [LoginRedirect] },
       { path: 'accueil', component: AccueilComponent, canActivate: [EnsureAuthenticated] },
       { path: '', component: AccueilComponent, canActivate: [EnsureAuthenticated] },
-      { path: 'chat', component: ChatComponent, canActivate: [EnsureAuthenticated] }
+      { path: 'chat', component: ChatComponent, canActivate: [EnsureAuthenticated] },
+      { path: 'blog', component: BlogComponent, canActivate: [EnsureAuthenticated] }
     ])
   ],
-  providers: [PdfLoaderService, AuthService, EnsureAuthenticated, LoginRedirect, WebSocketService, ChatService],
+  providers: [PdfLoaderService, AuthService, EnsureAuthenticated, LoginRedirect, WebSocketService, ChatService, PostComponent],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

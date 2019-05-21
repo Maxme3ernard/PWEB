@@ -1,0 +1,8 @@
+<div *ngIf="postsLoaded | async">
+  <app-post *ngFor="let post of posts"
+            [message]="post.message"
+            [id]="post.id"
+            [username]="post.username"
+            [score]="post.score"></app-post>
+</div>
+
