@@ -37,6 +37,7 @@ export class PostComponent implements OnInit {
       data => {
         this.responses = data as Array<Post>;
         this.responsesLoaded = Promise.resolve(true);
+        console.log(this.responses);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
