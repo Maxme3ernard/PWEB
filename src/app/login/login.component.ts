@@ -10,6 +10,7 @@ import {Router} from '@angular/router';
 })
 export class LoginComponent implements OnInit {
   user: User = new User();
+  private errorMsg = '';
   constructor(private auth: AuthService, private router: Router) { }
 
   ngOnInit() {
@@ -18,8 +19,9 @@ export class LoginComponent implements OnInit {
     this.auth.login(this.user).then((user) => {
       localStorage.setItem('token', user.auth_token);
       localStorage.setItem('username', user.username);
-      this.router.navigateByUrl('/status');
+      this.router.navigateByUrl('/accueil');
     }).catch((err) => {
+      this.errorMsg = err.error.message;
       console.log(err);
     });
   }

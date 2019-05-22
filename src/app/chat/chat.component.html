@@ -3,7 +3,9 @@
 <div *ngIf="messagesLoaded | async">
   <div *ngFor="let message of messages" >
     <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">
-      <b (click)="doVote(message)" > 	👍  {{message.score}} | </b><b class = "chatUsername"> {{ message.username }}</b>: {{ message.message }}
+      <p class = "chatMessageInside">
+          <b (click)="doVote(message)" class = "chatUpvote">👍</b><sub *ngIf="message.score>0">{{message.score}}</sub><b class = "chatUsername"> {{ message.username }}</b>: {{ message.message }}
+      </p>
     </ul>
   </div>
 </div>

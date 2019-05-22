@@ -1,0 +1,9 @@
+<div *ngIf="postsLoaded | async">
+  <app-post *ngFor="let post of filterPostOfMatiere()"
+            [message]="post.message"
+            [id]="post.id"
+            [username]="post.username"
+            [score]="post.score"
+            [matiere]="post.matiere"></app-post>
+</div>
+
