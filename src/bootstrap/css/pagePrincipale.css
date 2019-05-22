@@ -26,6 +26,21 @@ option {
   left: 70%;
 }
 
+.navbar-brand{
+  color:antiquewhite;
+  font-family: Impact;
+  font-size:30px;
+}
+
+.navbar-brand:hover{
+  color: #f39c12;
+}
+
+.navbar-nav{
+  right: 0;
+  left: 0;
+}
+
 .chat{
   top:80px;
   color: WHITE;
@@ -35,7 +50,6 @@ option {
   overflow-x:hidden;
 }
 
-
 .chatUpvote{
   height: 100px;
   margin-left:5px;
@@ -44,6 +58,11 @@ option {
   border-radius:5px;
   position:relative;
   size:20px;
+}
+
+.chatUpvote:hover{
+  background: #f39c12;
+  cursor: pointer;
 }
 
 .chatMessage{
@@ -81,21 +100,6 @@ option {
   right: 0;
   left: 0;
   z-index: 1030;
-}
-
-.navbar-brand{
-  color:antiquewhite;
-  font-family: Impact;
-  font-size:30px;
-}
-
-.navbar-brand:hover{
-  color: #f39c12;
-}
-
-.navbar-nav{
-  right: 0;
-  left: 0;
 }
 
 .PDFdisplayer{
