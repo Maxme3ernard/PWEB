@@ -1,5 +1,5 @@
-<div class="btn col-md-6 fresh type=submit" (click)="sortPostById()">Fresh</div>
 <div class="btn col-md-6 best type=submit "  (click)="sortPostByScore()">Best</div>
+<div class="btn col-md-6 fresh type=submit" (click)="sortPostById()">Fresh</div>
 <div class="col-lg-12 blog">
   <div *ngIf="postsLoaded | async">
   <app-post *ngFor="let post of filterPostOfMatiere()"

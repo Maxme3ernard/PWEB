@@ -103,3 +103,8 @@ select::-ms-expand {
 .logbox{
   background-color:white;
 }
+
+.alert-danger{
+  margin-top:20px;
+  margin-bot:20px;
+}

@@ -122,13 +122,17 @@ option {
 }
 
 .fresh{
-  background-color:#f39c12;
-
+  background-color:rgb(51, 122, 183);
+  background-image:url("/assets/clock.png");
+  background-size: cover;
 }
 
-.best{
-  background-color:rgb(51, 122, 183);
 
+
+.best{
+  background-color: #f39c12;
+  background-image:url("/assets/hot.png");
+  background-size: cover;
 }
 
 .blog{
