@@ -26,9 +26,6 @@ option {
   left: 70%;
 }
 
-.col-sm-8{
-}
-
 .chat{
   top:80px;
   color: WHITE;
@@ -41,7 +38,7 @@ option {
 
 .chatUpvote{
   height: 100px;
-  margin-left:-10px;
+  margin-left:5px;
   background-color: #2c3e50;
   color:white;
   border-radius:5px;
@@ -90,6 +87,10 @@ option {
   color:antiquewhite;
   font-family: Impact;
   font-size:30px;
+}
+
+.navbar-brand:hover{
+  color: #f39c12;
 }
 
 .navbar-nav{
