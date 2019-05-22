@@ -6,6 +6,8 @@ import {AuthService} from '../services/auth.service';
   templateUrl: './status.component.html',
   styleUrls: ['./status.component.css']
 })
+
+// Composant de gestion du compte utilisateur, où il pourra changer son mot de passe par exemple (TODO)
 export class StatusComponent implements OnInit {
   isLoggedIn = false;
 

@@ -9,6 +9,7 @@ import {HttpClient, HttpErrorResponse} from '@angular/common/http';
   styleUrls: ['./select-matiere.component.css']
 })
 
+// Composant chargé de gérer la sélection des matières.
 @Injectable()
 export class SelectMatiereComponent implements OnInit {
   private matieres: string[];
@@ -32,6 +33,7 @@ export class SelectMatiereComponent implements OnInit {
     this.getMatieresFromServer();
   }
 
+  // Vérifie qu'un sujet a bien été choisi puis l'envoie au pdf_loader qui l'affichera sur le pdf_displayer.
   onSubmit(form: NgForm) {
     if (form.value.file) {
       this.noFileSelected = false;
@@ -46,6 +48,7 @@ export class SelectMatiereComponent implements OnInit {
     }
   }
 
+  // Récupère les matières depuis le backend, triées par année.
   getMatieresFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/matieres').subscribe(
       data => {
@@ -58,6 +61,7 @@ export class SelectMatiereComponent implements OnInit {
     );
   }
 
+  // Récupère les fichiers depuis le backend, triés par matière.
   getFilesFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/files').subscribe(
       data => {
@@ -70,10 +74,12 @@ export class SelectMatiereComponent implements OnInit {
     );
   }
 
+  // Gère l'affichage de la correction.
   switchToCorrection() {
     this.pdfLoaderService.setPDF(this.anneeTC, this.matiere, this.file + '_c');
   }
 
+  // Gère l'affichage du sujet
   switchToSujet() {
     this.pdfLoaderService.setPDF(this.anneeTC, this.matiere, this.file + '_s');
   }

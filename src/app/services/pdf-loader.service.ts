@@ -1,6 +1,7 @@
 import { Injectable } from '@angular/core';
 import {BehaviorSubject} from 'rxjs';
 
+// Service récupérant une url qu'il communique au pdf displayer pour l'affichage.
 @Injectable()
 export class PdfLoaderService {
   public url: BehaviorSubject<string> = new BehaviorSubject<string>('/assets/accueil');

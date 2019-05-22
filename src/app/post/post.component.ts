@@ -14,6 +14,11 @@ interface Post {
   templateUrl: './post.component.html',
   styleUrls: ['./post.component.css']
 })
+
+/* Composant des questions archivées.
+   Comprend le nom de l'auteur, un id, un contenu, un score (les likes),
+   la matière sur laquelle il porte et les réponses qui lui sont liées.
+ */
 export class PostComponent implements OnInit {
   private responses: Array<Post>;
   private responsesLoaded: Promise<boolean>;
@@ -31,6 +36,7 @@ export class PostComponent implements OnInit {
     this.responses = new Array<Post>();
   }
 
+  // Récupère les réponses liées à ce post depuis le backend via http.
   getResponseFromServer() {
     const params = new HttpParams().set('id', this.id);
     this.http.get('http://127.0.0.1:5000/api/responses', {params}).subscribe(
@@ -44,6 +50,7 @@ export class PostComponent implements OnInit {
     );
   }
 
+  // Envoi d'une nouvelle réponse sur ce post au backend.
   sendResponse() {
     if (this.response.length > 5) {
       const data = {
@@ -56,6 +63,8 @@ export class PostComponent implements OnInit {
       this.auth.postResponse(data);
     }
   }
+
+  // Envoi d'un nouveau like sur ce post au backend.
   doVote() {
     const params = new HttpParams().set('id', this.id).set('username', localStorage.getItem('username'));
     console.log(params)

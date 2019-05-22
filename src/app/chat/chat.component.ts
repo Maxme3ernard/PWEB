@@ -18,6 +18,7 @@ interface Message {
   styleUrls: ['./chat.component.css']
 })
 
+// Composant chargé de l'affichage et de l'envoi de messages en temps réel.
 export class ChatComponent implements OnInit, AfterViewChecked {
 
   private messages: Array<Message>;
@@ -34,13 +35,13 @@ export class ChatComponent implements OnInit, AfterViewChecked {
 
   ngOnInit() {
     this.getMessageFromServer();
-    this.chat.messages.subscribe(msg => {
-      if (msg.type === 'message') {
+    this.chat.messages.subscribe(msg => { // Réception des messages en temps réel.
+      if (msg.type === 'message') { // Si le type est 'message', il s'agit d'un message normal que l'on affiche.
         this.messages.push(msg);
         const container = document.getElementById('chatBox');
         container.scrollTop = container.scrollHeight;
       }
-      if (msg.type === 'like') {
+      if (msg.type === 'like') { // Si le type est 'like', il s'agit d'un nouveau like sur un message déjà envoyé.
         const updateMsg = this.messages.find((x) => x.id === msg.id);
         const index = this.messages.indexOf(updateMsg);
         this.messages[index].score = msg.score;
@@ -48,11 +49,13 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     });
   }
 
+  // Scroll automatique en bas du chat au chargement de la page.
   ngAfterViewChecked() {
     const container = document.getElementById('chatBox');
     container.scrollTop = container.scrollHeight;
   }
 
+  // Envoi du message via le service chat.
   sendMessage() {
     if (this.message !== '') {
       const data = {
@@ -67,6 +70,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     }
   }
 
+  // Récupération des anciens messages depuis le backend via http, puis affichage des messages concernant la matière actuelle.
   getMessageFromServer() {
     this.httpClient.get('http://127.0.0.1:5000/api/messages').subscribe(
       data => {
@@ -79,6 +83,7 @@ export class ChatComponent implements OnInit, AfterViewChecked {
     );
   }
 
+  // Gère le 'like' sur un message.
   doVote(msg: Message) {
     const data = {
       id: msg.id,

@@ -6,6 +6,8 @@ import * as jwt_decode from 'jwt-decode';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service lié à l'identification de l'utilisateur par l'envoi des requêtes post et get http.
 export class AuthService {
 
   private BASE_URL = 'http://localhost:5000/api';

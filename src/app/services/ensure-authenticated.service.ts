@@ -5,6 +5,8 @@ import {AuthService} from './auth.service';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service vérifiant si l'utilisateur est connecté, utile pour le routage.
 export class EnsureAuthenticated implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) { }

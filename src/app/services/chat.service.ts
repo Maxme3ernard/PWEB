@@ -8,6 +8,8 @@ import { map } from 'rxjs/operators';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service mettant le chat en relation avec le service de connexion au socket (web-socket service).
 export class ChatService {
 
   messages: Subject<any>;

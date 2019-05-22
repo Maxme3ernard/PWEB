@@ -4,7 +4,7 @@ import {Observable} from 'rxjs';
 import * as Rx from 'rxjs';
 
 
-
+// Service de gestion de la connexion au socket pour le chat.
 @Injectable()
 export class WebSocketService {
 

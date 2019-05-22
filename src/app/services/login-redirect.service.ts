@@ -5,6 +5,8 @@ import {CanActivate, Router} from '@angular/router';
 @Injectable({
   providedIn: 'root'
 })
+
+// Service vérifiant si l'utilisateur est connecté, utile pour le routage.
 export class LoginRedirect implements CanActivate {
 
   constructor(private auth: AuthService, private router: Router) {}
