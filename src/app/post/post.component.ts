@@ -60,9 +60,10 @@ export class PostComponent implements OnInit {
     const params = new HttpParams().set('id', this.id).set('username', this.username);
     console.log(params)
     this.http.get('http://127.0.0.1:5000/api/posts/like', {params}).subscribe(
-      data => {
-        this.score = data;
-        console.log(data);
+      (response) => {
+        // @ts-ignore
+        this.score = response.score;
+        console.log(response);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
