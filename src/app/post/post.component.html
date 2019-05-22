@@ -1,11 +1,15 @@
-<b (click)="doVote()" class = "chatUpvote">👍</b><sub *ngIf="score>0">{{score}}</sub><b>{{username + ": "}}</b>{{message}}
-<div *ngIf="responsesLoaded | async">
+<div class = "container-fluid questionBlog">
+  <b (click)="doVote()" class = "chatUpvote">👍</b><sub *ngIf="score>0">{{score}}</sub><b>{{username + ": "}}</b>{{message}}
+  <hr/>
+</div>
+<div *ngIf="responsesLoaded | async" class="reponseBlog ">
   <div *ngFor="let response of responses">
     <div class="response">
       <b>{{response.username + ": "}}</b>{{response.message}}
     </div>
   </div>
 </div>
+
 <div class="responseInput">
   <input type="text" id="response" placeholder="Répondez" [(ngModel)]="response" name="response" required>
   <button class="btn btn-default" (click)="sendResponse()">Répondre</button>

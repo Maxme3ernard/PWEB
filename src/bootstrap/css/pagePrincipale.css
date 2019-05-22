@@ -26,6 +26,14 @@ option {
   left: 70%;
 }
 
+.navbar-fixed-top{
+  background: #2c3e50;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
 .navbar-brand{
   color:antiquewhite;
   font-family: Impact;
@@ -46,7 +54,7 @@ option {
   color: WHITE;
   height: 600px;
   overflow-y: scroll;
-  scroll-behavior: smooth;
+  scroll-behavior: auto;
   overflow-x:hidden;
 }
 
@@ -94,14 +102,6 @@ option {
   border: 1px black ridge;
 }
 
-.navbar-fixed-top{
-  background: #2c3e50;
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-}
-
 .PDFdisplayer{
   height:900px;
   overflow-y:scroll;
@@ -114,11 +114,28 @@ option {
 }
 
 .sujet{
-  background-color:darkred;
+  background-color:#f39c12;
 }
 
 .correction{
-  background-color:green;
+  background-color:rgb(51, 122, 183);
 }
 
+.blog{
+  background:#ffffff;
+  border:0;
+  overflow-x: hidden;
+}
+
+.questionBlog{
+  margin-left: -20px;
+  margin-right: -20px;
+  color: #f39c12;
+  font-size : 20px;
+  //font-family : Impact;
+}
+
+.reponseBlog{
+  margin-left:20px;
+}
 

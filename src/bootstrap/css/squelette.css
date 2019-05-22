@@ -1,5 +1,6 @@
 body {
   padding-top: 10px;
+  background-color:#e9ebee;
 }
 [class*="col-"], footer {
   background-color: transparent;
@@ -39,10 +40,6 @@ body {
     width: 1170px;
   }
 }
-body {
-  background-color:rgb(242, 242, 242);
-}
-
 
 select::-ms-expand {
   display: none;
