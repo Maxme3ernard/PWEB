@@ -31,6 +31,7 @@ export class SelectMatiereComponent implements OnInit {
   ngOnInit() {
     this.getFilesFromServer();
     this.getMatieresFromServer();
+    this.selectedAnnee = 'AnneeTC';
   }
 
   // Vérifie qu'un sujet a bien été choisi puis l'envoie au pdf_loader qui l'affichera sur le pdf_displayer.
