@@ -1,3 +1,4 @@
+<!-- Ce component contient  la partie questions-réponses de la partie "blog" ou "questions populaires" -->
 <div class = "container-fluid questionBlog">
   <b (click)="doVote()" class = "chatUpvote">👍</b><sub *ngIf="score>0">{{score}}</sub><b>{{username + ": "}}</b>{{message}}
 </div>

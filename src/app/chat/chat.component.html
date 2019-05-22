@@ -1,3 +1,4 @@
+<!-- Ce component met en place le chat -->
 <div *ngIf="messagesLoaded | async">
   <div *ngFor="let message of messages" >
     <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">

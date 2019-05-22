@@ -1,13 +1,98 @@
+/*Cette fiche de style implémente des styles utilisés par la page principale,
+ils sont ordonnés en lisant la page de haut en bas puis de gauche à droite.*/
+
+/*directives pour le gros de la page*/
 body{
   padding-top: 70px;
 }
 
-option {
-  color:white;
+/*barre de navigation*/
+.navbar-fixed-top{
   background: #2c3e50;
-  border: 0;
+  position: fixed;
+  right: 0;
+  left: 0;
+  z-index: 1030;
 }
 
+/*titre de la barre de navigation*/
+.navbar-brand{
+  color:antiquewhite;
+  font-family: Impact;
+  font-size:30px;
+}
+
+/*survol du titre de la barre de navigation*/
+.navbar-brand:hover{
+  color: #f39c12;
+}
+
+/*menus déroulants stylisés*/
+.styled-select {
+  position: relative;
+  display: flex;
+  width: 20em;
+  height: 3em;
+  line-height: 3;
+  background: #2c3e50;
+  overflow: hidden;
+  border-radius: .25em;
+}
+
+/*flèche des menus déroulants stylisés*/
+.styled-select::after {
+  content: '\25BC';
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 0 1em;
+  background: #34495e;
+  cursor: pointer;
+  pointer-events: none;
+  -webkit-transition: .25s all ease;
+  -o-transition: .25s all ease;
+  transition: .25s all ease;
+}
+
+/*Survol de la flèche des menus déroulants*/
+.styled-select:hover::after {
+  color: #f39c12;
+}
+
+/*boutons de la barre de navigation*/
+.boutonsBarre{
+  padding-left: 2em;
+}
+
+/*bouton "choisir"*/
+.choisir{
+  width: 10em;
+  height: 3em;
+}
+
+/*survol du bouton "choisir"*/
+.choisir:hover {
+  color: #f39c12;
+}
+
+/* bouton "compte"*/
+.compte{
+  background: #2c3e50;
+  color: #f39c12;
+  width: 10em;
+  height: 3em;
+}
+
+/*boutons de sujet et correction*/
+.sujet{
+  background-color:#f39c12;
+}
+
+.correction{
+  background-color:rgb(51, 122, 183);
+}
+
+/*conteneur de l'afficheur du pdf*/
 .principalContainer{
   background-color: transparent;
   border: 0;
@@ -17,7 +102,22 @@ option {
   overflow-y:scroll;
 }
 
-.col-lg-2{
+/*afficheur du pdf*/
+.PDFdisplayer{
+  height:900px;
+  overflow-y:scroll;
+  overflow-x:hidden;
+  z-index: -1;
+}
+
+/*boite de chat*/
+.chat{
+  top:80px;
+  color: WHITE;
+  height: 600px;
+  overflow-y: scroll;
+  scroll-behavior: auto;
+  overflow-x:hidden;
   background-color: #2c3e50;
   border-radius: 0;
   text-align: left;
@@ -26,38 +126,7 @@ option {
   left: 70%;
 }
 
-.navbar-fixed-top{
-  background: #2c3e50;
-  position: fixed;
-  right: 0;
-  left: 0;
-  z-index: 1030;
-}
-
-.navbar-brand{
-  color:antiquewhite;
-  font-family: Impact;
-  font-size:30px;
-}
-
-.navbar-brand:hover{
-  color: #f39c12;
-}
-
-.navbar-nav{
-  right: 0;
-  left: 0;
-}
-
-.chat{
-  top:80px;
-  color: WHITE;
-  height: 600px;
-  overflow-y: scroll;
-  scroll-behavior: auto;
-  overflow-x:hidden;
-}
-
+/*pouces en l'air*/
 .chatUpvote{
   height: 100px;
   margin-left:5px;
@@ -68,11 +137,13 @@ option {
   size:20px;
 }
 
+/*au survol des pouces en l'air*/
 .chatUpvote:hover{
   background: #f39c12;
   cursor: pointer;
 }
 
+/*messages dans le chat*/
 .chatMessage{
   background:white;
   color: #2c3e50;
@@ -82,6 +153,7 @@ option {
   padding-left: 0;
 }
 
+/*entrée des messages*/
 .chatInput{
   color: black;
   border-radius: 0;
@@ -91,43 +163,12 @@ option {
   position:fixed;
 }
 
-.chatButton{
-  background-color: LIGHTBLUE;
-  border-radius: 0;
-  text-align:left;
-  height:40px;
-  top:680px;
-  left:86.5%;
-  position:fixed;
-  border: 1px black ridge;
-}
-
-.PDFdisplayer{
-  height:900px;
-  overflow-y:scroll;
-  overflow-x:hidden;
-  z-index: -1;
-}
-
-#PDFdisplayer::-webkit-scrollbar {
-  display: none;
-}
-
-.sujet{
-  background-color:#f39c12;
-}
-
-.correction{
-  background-color:rgb(51, 122, 183);
-}
-
+/*boutons de fresh et best pour le chat*/
 .fresh{
   background-color:rgb(51, 122, 183);
   background-image:url("/assets/clock.png");
   background-size: cover;
 }
-
-
 
 .best{
   background-color: #f39c12;
@@ -135,12 +176,14 @@ option {
   background-size: cover;
 }
 
+/*boite des questions populaires*/
 .blog{
   background:#ffffff;
   border:0;
   overflow-x: hidden;
 }
 
+/*questions populaires*/
 .questionBlog{
   margin-left: -20px;
   margin-right: -20px;
@@ -150,6 +193,7 @@ option {
   //font-family : Impact;
 }
 
+/*réponse aux questions populaires*/
 .reponseBlog{
   margin-left:20px;
   margin-bottom:5px;

@@ -1,7 +1,12 @@
+/*Cette fiche de style implémente des styles utilisés par toutes les pages*/
+
+/*directives pour le gros de la page*/
 body {
   padding-top: 10px;
   background-color:#e9ebee;
 }
+
+/*directives générales pour les colonnes bootstrap*/
 [class*="col-"], footer {
   background-color: transparent;
   border: 1px solid black;
@@ -9,101 +14,31 @@ body {
   line-height: 20px;
 }
 
+/*directives générales pour les lignes bootstrap*/
 .row {
   margin-right: -15px;
   margin-left: -15px;
 }
 
+/*directives générales pour les conteneurs*/
 .container {
   margin-right: auto;
   margin-left: auto;
 }
 
+/*directives générales pour les menus déroulants*/
 .form-control{
   background: #2c3e50;
   color: WHITE;
   border: 0;
 }
 
-@media (min-width: 768px) {
-  .container {
-    width: 750px;
-  }
-}
-@media (min-width: 992px) {
-  .container {
-    width: 970px;
-  }
-}
-@media (min-width: 1200px) {
-  .container {
-    width: 1170px;
-  }
-}
-
-select::-ms-expand {
-  display: none;
-}
-
-.styled-select {
-  position: relative;
-  display: flex;
-  width: 20em;
-  height: 3em;
-  line-height: 3;
-  background: #2c3e50;
-  overflow: hidden;
-  border-radius: .25em;
-}
-
-/* Arrow */
-.styled-select::after {
-  content: '\25BC';
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 0 1em;
-  background: #34495e;
-  cursor: pointer;
-  pointer-events: none;
-  -webkit-transition: .25s all ease;
-  -o-transition: .25s all ease;
-  transition: .25s all ease;
-}
-
-/* Transition */
-.styled-select:hover::after {
- color: #f39c12;
-}
-
-.boutonsBarre{
-  padding-left: 2em;
-}
-
-.choisir{
-  width: 10em;
-  height: 3em;
-}
-
-.choisir:hover {
-  color: #f39c12;
-}
-
-.compte{
-  background: #2c3e50;
-  color: #f39c12;
-  width: 10em;
-  height: 3em;
-}
-
-.compte:hover {
-  color: #f39c12;
-}
-
+/*boite du login*/
 .logbox{
   background-color:white;
 }
 
+/*messages d'erreur lors du login*/
 .alert-danger{
   margin-top:20px;
   margin-bot:20px;

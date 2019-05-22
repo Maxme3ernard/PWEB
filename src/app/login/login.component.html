@@ -1,3 +1,4 @@
+<!-- Ce component sert à afficher la page de connexion -->
 <div class="row">
   <div class="col-lg-offset-4 col-md-offset-3 col-sm-offset-1 col-xs-offset-0 col-lg-4 col-md-6 col-sm-10 col-xs-12 logbox">
     <h1>Connexion</h1>
@@ -7,11 +8,11 @@
     <form (ngSubmit)="onLogin()" novalidate>
       <div class="form-group">
         <label for="username">Nom d'utilisateur</label>
-        <input type="text" class="form-control" id="username" placeholder="enter username" [(ngModel)]="user.username" name="username" required>
+        <input type="text" class="form-control" id="username" placeholder="entrez le nom d'utilisateur" [(ngModel)]="user.username" name="username" required>
       </div>
       <div class="form-group">
         <label for="password">Mot de passe</label>
-        <input type="password" class="form-control" id="password" placeholder="enter password" [(ngModel)]="user.password" name="password" required>
+        <input type="password" class="form-control" id="password" placeholder="entrez le mot de passe" [(ngModel)]="user.password" name="password" required>
       </div>
       <button type="submit" class="btn btn-default">Connexion</button>
     </form>
