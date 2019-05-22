@@ -44,11 +44,10 @@ body {
 }
 
 
-/* Remove IE arrow */
 select::-ms-expand {
   display: none;
 }
-/* Custom Select */
+
 .styled-select {
   position: relative;
   display: flex;
