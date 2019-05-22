@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import {AfterViewChecked, Component, OnInit} from '@angular/core';
 import {ChatService} from '../services/chat.service';
 import {PdfLoaderService} from '../services/pdf-loader.service';
 import {HttpClient, HttpErrorResponse} from '@angular/common/http';
@@ -18,7 +18,7 @@ interface Message {
   styleUrls: ['./chat.component.css']
 })
 
-export class ChatComponent implements OnInit {
+export class ChatComponent implements OnInit, AfterViewChecked {
 
   private messages: Array<Message>;
   private messagesLoaded: Promise<boolean>;
@@ -37,6 +37,8 @@ export class ChatComponent implements OnInit {
     this.chat.messages.subscribe(msg => {
       if (msg.type === 'message') {
         this.messages.push(msg);
+        const container = document.getElementById('chatBox');
+        container.scrollTop = container.scrollHeight;
       }
       if (msg.type === 'like') {
         const updateMsg = this.messages.find((x) => x.id === msg.id);
@@ -44,6 +46,11 @@ export class ChatComponent implements OnInit {
         this.messages[index].score = msg.score;
       }
     });
+  }
+
+  ngAfterViewChecked() {
+    const container = document.getElementById('chatBox');
+    container.scrollTop = container.scrollHeight;
   }
 
   sendMessage() {
