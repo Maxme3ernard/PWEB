@@ -1,5 +1,3 @@
-<ul id="messages"></ul>
-
 <div *ngIf="messagesLoaded | async">
   <div *ngFor="let message of messages" >
     <ul *ngIf="message.matiere === currentMatiere" class = "chatMessage">
