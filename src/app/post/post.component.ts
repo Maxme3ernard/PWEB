@@ -37,7 +37,6 @@ export class PostComponent implements OnInit {
       data => {
         this.responses = data as Array<Post>;
         this.responsesLoaded = Promise.resolve(true);
-        console.log(this.responses);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
@@ -54,16 +53,16 @@ export class PostComponent implements OnInit {
       };
       this.response = '';
       this.responses.push(data as Post);
-      console.log(data);
       this.auth.postResponse(data);
     }
   }
   doVote() {
-    const params = new HttpParams();
-    params.set('id', this.id);
+    const params = new HttpParams().set('id', this.id).set('username', this.username);
+    console.log(params)
     this.http.get('http://127.0.0.1:5000/api/posts/like', {params}).subscribe(
       data => {
         this.score = data;
+        console.log(data);
       },
       (err: HttpErrorResponse) => {
         console.log (err.message);
