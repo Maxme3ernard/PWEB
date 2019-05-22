@@ -1,3 +1,5 @@
+<div class="btn col-md-6 sujet type=submit" (click)="sortPostById()">Fresh</div>
+<div class="btn col-md-6 correction type=submit" (click)="sortPostByScore()">Best</div>
 <div *ngIf="postsLoaded | async">
   <app-post *ngFor="let post of filterPostOfMatiere()"
             [message]="post.message"

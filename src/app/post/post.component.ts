@@ -57,7 +57,7 @@ export class PostComponent implements OnInit {
     }
   }
   doVote() {
-    const params = new HttpParams().set('id', this.id).set('username', this.username);
+    const params = new HttpParams().set('id', this.id).set('username', localStorage.getItem('username'));
     console.log(params)
     this.http.get('http://127.0.0.1:5000/api/posts/like', {params}).subscribe(
       (response) => {

@@ -43,10 +43,16 @@ export class BlogComponent implements OnInit {
     );
   }
   sortPostByScore() {
-    this.posts.sort((a, b) => a.score.localeCompare(b.score));
+    this.posts.sort((a, b) => {
+      return b.score - a.score;
+    });
+    console.log(this.posts);
   }
   sortPostById() {
-    this.posts.sort((a, b) => a.id.localeCompare(b.id));
+    this.posts.sort((a, b) => {
+      return b.id - a.id;
+    });
+    console.log(this.posts);
   }
   filterPostOfMatiere() {
     return this.posts.filter(x => x.matiere === this.currentMatiere);
