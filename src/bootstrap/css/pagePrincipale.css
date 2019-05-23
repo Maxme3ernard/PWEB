@@ -114,7 +114,7 @@ body{
 .chat{
   top:80px;
   color: WHITE;
-  height: 600px;
+  height: 80%;
   overflow-y: scroll;
   scroll-behavior: auto;
   overflow-x:hidden;
@@ -128,7 +128,6 @@ body{
 
 /*pouces en l'air*/
 .chatUpvote{
-  height: 100px;
   margin-left:5px;
   background-color: #2c3e50;
   color:white;
@@ -159,7 +158,8 @@ body{
   border-radius: 0;
   text-align:left;
   height:40px;
-  top:680px;
+  margin-top:80px;
+  top:80%;
   position:fixed;
 }
 
