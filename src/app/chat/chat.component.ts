@@ -89,15 +89,15 @@ export class ChatComponent implements OnInit, AfterViewChecked {
       id: msg.id,
       username: localStorage.getItem('username'),
       type: 'like',
-      valeur: 0
+      valeur: 1
     };
-    if (msg.uservote === 1) {
+    /*if (msg.uservote === 1) {
       msg.uservote = 0;
       data.valeur = -1;
     } else {
       msg.uservote = 1;
       data.valeur = 1;
-    }
+    }*/
     this.chat.sendMsg(data);
   }
 }

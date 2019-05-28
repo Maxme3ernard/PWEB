@@ -9,7 +9,7 @@ export class PdfLoaderService {
 
   constructor() { }
   setPDF(anneeTC: string, matiere: string, file: string) {
-    this.url.next('/assets/' + anneeTC + '/' + matiere + '/' + file);
+    this.url.next('/assets/pdf/' + anneeTC + '/' + matiere + '/' + file);
     this.currentMatiere.next(matiere);
   }
 }
